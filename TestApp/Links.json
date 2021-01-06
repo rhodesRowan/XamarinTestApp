@@ -1,0 +1,32 @@
+﻿[
+    {
+      "url": "https://www.bbc.co.uk",
+      "identifier": "bbc",
+      "hex": "fa6b9b"
+    },
+    {
+      "url": "https://www.ft.com",
+      "identifier": "financial times",
+      "hex": "7a6fc7"
+    },
+    {
+      "url": "https://www.washingtonpost.com",
+      "identifier": "washington post",
+      "hex": "e8f277"
+    },
+    {
+      "url": "https://www.thesun.co.uk",
+      "identifier": "the sun",
+      "hex": "abf07a"
+    },
+    {
+      "url": "https://www.thetimes.co.uk",
+      "identifier": "the times",
+      "hex": "7df0c6"
+    },
+    {
+      "url": "https://edition.cnn.com",
+      "identifier": "cnn",
+      "hex": "eb78d6"
+    }
+]

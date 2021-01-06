@@ -1,17 +1,31 @@
 ﻿using System;
+using TestApp.Models;
 using TestApp.Pages.Landing;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
+using TestApp.Pages.HomePage;
+using TestApp.Resources;
+using TestApp.Helpers;
 
 namespace TestApp
 {
     public partial class App : Application
     {
+        public static User CurrentUser;
+
         public App()
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LandingPage());
+            if (currentUserExists())
+            {
+                MainPage = new Home();
+            }
+            else
+            {
+                MainPage = new NavigationPage(new LandingPage());
+            }
         }
 
         protected override void OnStart()
@@ -24,6 +38,27 @@ namespace TestApp
 
         protected override void OnResume()
         {
+        }
+
+        public Boolean currentUserExists()
+        {
+            return CurrentUser != null ? true : CurrentUserExistsInPreferences();
+
+        }
+
+        public Boolean CurrentUserExistsInPreferences()
+        {
+            var currentUser = Preferences.Get(Constants.CurrentUser, null);
+
+            if (currentUser != null)
+            {
+                CurrentUser = Utilities.DeserializeFromJson<User>(currentUser);
+                return currentUserExists();
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

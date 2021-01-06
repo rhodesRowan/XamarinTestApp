@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    
+     <data name="login" xml:space="preserve">
+        <value>login</value>
+    </data>
+    <data name="username" xml:space="preserve">
+        <value>username</value>
+    </data>
+    <data name="password" xml:space="preserve">
+        <value>password</value>
+    </data>
+    <data name="welcomeMessage" xml:space="preserve">
+        <value>Welcome To Test App</value>
+    </data>
+    <data name="getStarted" space="preserve">
+        <value>Get Started</value>
+    </data>
+    <data name="LoginError" space="preserve">
+        <value>Oops...</value>
+    </data>
+    <data name="LoginCTAMessage" space="preserve">
+        <value>Ok</value>
+    </data>
+    <data name="LoginWrongPassword" space="preserve">
+        <value>The Current Username exists, either select a new username or you have entered an incorrect password.</value>
+    </data>
+</root>

@@ -1,49 +1,24 @@
 ﻿using System;
 using Xamarin.Forms;
 using TestApp.Pages.Login;
+using System.Resources;
+using TestApp.Resources.Localization;
+using TestApp.Resources.Styling;
+using TestApp.Components;
 
 namespace TestApp.Pages.Landing
 {
-    public class LandingPage : ContentPage
+    public class LandingPage : BaseOnBoardingPage
     {
 
-        private Button loginButton;
-        private Image backgroundImage;
-        private RelativeLayout relativeLayout;
+        private Button loginButton;        
 
         public LandingPage()
         {
-            NavigationPage.SetHasNavigationBar(this, false);
-            Content = BuildContent();
+            AddLoginButton();
         }
 
-        private RelativeLayout BuildContent()
-        {
-            relativeLayout= new RelativeLayout();
-            addBackgroundImage();
-            addLoginButton();
-            return relativeLayout;
-        }
-
-        private void addBackgroundImage()
-        {
-            backgroundImage = BackgroundImage();
-            relativeLayout.Children.Add(
-                backgroundImage,
-                Constraint.Constant(0),
-                Constraint.Constant(0),
-                Constraint.RelativeToParent((parent) =>
-                {
-                    return parent.Width;
-                }),
-                Constraint.RelativeToParent((parent) =>
-                {
-                    return parent.Height;
-                })
-            );
-        }
-
-        private void addLoginButton()
+        private void AddLoginButton()
         {
             loginButton = LoginButton();
             relativeLayout.Children.Add(
@@ -56,35 +31,22 @@ namespace TestApp.Pages.Landing
             {
                 return parent.Height * 0.9;
             }),
-            Constraint.RelativeToParent((parent =>
+            Constraint.RelativeToParent((parent) =>
             {
                 return parent.Width * 0.8;
-            }))
+            })
             );
         }
 
         private Button LoginButton()
         {
-            Button login = new Button
+            Button login = new OnBoardingButton
             {
-                Text = "Login",
-                FontFamily = "Organo",
-                TextColor = Color.White,
-                FontAttributes = FontAttributes.Bold,
-                FontSize = 24.0,
-                BackgroundColor = Color.FromHex("abd1d4"),
+                Text = LocalizedResources.getStarted.ToUpper()
             };
+
             login.Clicked += onLoginButtonClicked;
             return login;
-        }
-
-        private new Image BackgroundImage()
-        {
-            return new Image
-            {
-                Source = ImageSource.FromResource("TestApp.Resources.Images.landingPageBackground.jpg"),
-                Aspect = Aspect.AspectFill
-            };
         }
 
         async private void onLoginButtonClicked(object sender, EventArgs e)

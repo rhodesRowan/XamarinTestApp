@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Hackiftekhar.IQKeyboardManager.Xamarin;
 using UIKit;
 
 namespace TestApp.iOS
@@ -24,6 +25,11 @@ namespace TestApp.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+
+            IQKeyboardManager.SharedManager().EnableAutoToolbar = true;
+            IQKeyboardManager.SharedManager().ShouldPlayInputClicks = false;
+            IQKeyboardManager.SharedManager().ShouldResignOnTouchOutside = true;
+            IQKeyboardManager.SharedManager().ShouldToolbarUsesTextFieldTintColor = true;
 
             return base.FinishedLaunching(app, options);
         }

@@ -11,24 +11,47 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1874" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Resources\Images\" />
     <Folder Include="Resources\Fonts\" />
-    <Folder Include="Resources\Helpers\" />
     <Folder Include="Pages\" />
     <Folder Include="Pages\LandingPage\" />
     <Folder Include="Pages\LoginPage\" />
+    <Folder Include="Resources\Localization\" />
+    <Folder Include="Resources\Styling\" />
+    <Folder Include="Pages\BaseOnBoardingPage\" />
+    <Folder Include="Components\" />
+    <Folder Include="Pages\HomePage\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Models\" />
+    <Folder Include="Services\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Resources\Constants\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Assets\Images\landingPageBackground.jpg" />
     <None Remove="Resources\Fonts\Organo.ttf" />
+    <None Remove="Links.json" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Images\landingPageBackground.jpg" />
     <EmbeddedResource Include="Resources\Fonts\Organo.ttf" />
+    <EmbeddedResource Include="Links.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\Localization\LocalizedResources.Designer.cs">
+      <DependentUpon>LocalizedResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Localization\LocalizedResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalizedResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
