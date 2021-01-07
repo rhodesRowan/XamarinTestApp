@@ -1,4 +1,5 @@
 ﻿using System;
+using TestApp.Resources;
 using Xamarin.Forms;
 
 namespace TestApp.Pages
@@ -44,7 +45,7 @@ namespace TestApp.Pages
         {
             return new Image
             {
-                Source = ImageSource.FromResource("TestApp.Resources.Images.landingPageBackground.jpg"),
+                Source = ImageSource.FromResource($"{Constants.ImagesPath}/landingPageBackground.jpg"),
                 Aspect = Aspect.AspectFill
             };
         }

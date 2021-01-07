@@ -37,11 +37,13 @@
     <None Remove="Assets\Images\landingPageBackground.jpg" />
     <None Remove="Resources\Fonts\Organo.ttf" />
     <None Remove="Links.json" />
+    <None Remove="Resources\Images\search.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Images\landingPageBackground.jpg" />
     <EmbeddedResource Include="Resources\Fonts\Organo.ttf" />
     <EmbeddedResource Include="Links.json" />
+    <EmbeddedResource Include="Resources\Images\search.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Resources\Localization\LocalizedResources.Designer.cs">

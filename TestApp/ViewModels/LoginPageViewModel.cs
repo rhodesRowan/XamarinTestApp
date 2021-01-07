@@ -6,7 +6,7 @@ using Xamarin.Essentials;
 using System.Threading.Tasks;
 using TestApp.Helpers;
 using TestApp.Resources;
-using TestApp.Pages.HomePage;
+using TestApp.Pages.Home;
 using System.Linq;
 using TestApp.Resources.Localization;
 using System.Runtime.CompilerServices;
@@ -114,7 +114,7 @@ namespace TestApp.ViewModels
 
         private async void NavigateToHome()
         {
-            Navigation.InsertPageBefore(new Home(), Navigation.NavigationStack.First());
+            Navigation.InsertPageBefore(new HomePage(), Navigation.NavigationStack.First());
             await Navigation.PopToRootAsync();
         }
 

@@ -4,7 +4,7 @@ using TestApp.Pages.Landing;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
-using TestApp.Pages.HomePage;
+using TestApp.Pages.Home;
 using TestApp.Resources;
 using TestApp.Helpers;
 
@@ -20,7 +20,7 @@ namespace TestApp
 
             if (currentUserExists())
             {
-                MainPage = new Home();
+                MainPage = new HomePage();
             }
             else
             {
