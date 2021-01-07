@@ -45,7 +45,7 @@ namespace TestApp.Pages
         {
             return new Image
             {
-                Source = ImageSource.FromResource($"{Constants.ImagesPath}/landingPageBackground.jpg"),
+                Source = ImageSource.FromResource($"{Constants.ImagesPath}.landingPageBackground.jpg"),
                 Aspect = Aspect.AspectFill
             };
         }

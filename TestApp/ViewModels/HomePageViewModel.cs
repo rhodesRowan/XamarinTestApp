@@ -1,16 +1,32 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using TestApp.Models;
 using TestApp.Services;
+using Xamarin.Forms;
 
 namespace TestApp.ViewModels
 {
-    public class HomePageViewModel
+    public class HomePageViewModel : INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
         private readonly DataManager dataManager = new DataManager();
-        ObservableCollection<WebLink> webLinks   = new ObservableCollection<WebLink>();
-        public ObservableCollection<WebLink> WebLinks { get { return webLinks; } }
-        
+        private ObservableCollection<WebLink> flyoutItems;
+        public ObservableCollection<WebLink> FlyoutItems
+        {
+            get
+            {
+                return flyoutItems;
+            }
+            set
+            {
+                this.flyoutItems = value;
+                OnPropertyChanged("FlyoutItems");
+
+            }
+        } 
 
         public HomePageViewModel()
         {
@@ -19,12 +35,18 @@ namespace TestApp.ViewModels
 
         private void addItems()
         {
-            var items = dataManager.getLocalWebLinks();
+             var items = dataManager.getLocalWebLinks();
 
             foreach(WebLink item in items)
             {
-                webLinks.Add(item);
+                FlyoutItems.Add(item);
             }
+        }
+
+        public void OnPropertyChanged(string name)
+        {
+            if (this.PropertyChanged != null)
+                this.PropertyChanged(this, new PropertyChangedEventArgs(name));
         }
     }
 }
